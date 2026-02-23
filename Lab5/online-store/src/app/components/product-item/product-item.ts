@@ -22,11 +22,8 @@ export class ProductItem {
   }
 
   onDelete(){
-    console.log('Full product:', this.product());
-    console.log('Product id:', this.product().id);
     const confirmed = confirm(`Are you sure you want to delete "${this.product().name}"?`);
     if (confirmed) {
-      console.log('Emitting id:', this.product().id);
       this.deleteProduct.emit(this.product().id);
     }
   }
